@@ -32,6 +32,15 @@ class Domains
 
     /**
      * @param string $domain
+     * @param string $name
+     * @return string|string[]
+     */
+    public static function getTldFromDomainByName(string $domain, string $name) {
+        return str_replace("{$name}.", '', $domain);
+    }
+
+    /**
+     * @param string $domain
      * @return bool
      */
     public static function valid(string $domain): bool
